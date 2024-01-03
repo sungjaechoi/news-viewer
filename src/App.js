@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <Categories category={category} onSelect={onSelect} />
-      <NewsList ategory={category} />
+      <NewsList category={category} />
     </>
   );
 };
