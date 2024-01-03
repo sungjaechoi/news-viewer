@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const categories = [
   {
     name: "all",
@@ -30,19 +32,17 @@ const categories = [
 ];
 
 const Categories = ({ onSelect, category }) => {
-
   return (
     <ul className="navication">
       {categories.map((c) => (
-        <li
-          className={`nav_item${category === c.name ? ' active' : '' }`}
-          key={c.name}
-          active={category === c.name}
-          onClick={(e) => {
-            onSelect(c.name)
-          }}
-        >
-          {c.text}
+        <li className="nav_item">
+          <NavLink
+            key={c.name}
+            className={({ isActive }) => (isActive ? "active" : undefined)}
+            to={c.name === "all" ? "/" : `/${c.name}`}
+          >
+            {c.text}
+          </NavLink>
         </li>
       ))}
     </ul>

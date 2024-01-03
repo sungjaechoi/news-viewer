@@ -9,12 +9,17 @@
 
   .navication {
     display: flex;
-    font-size: 3vw;
-    cursor: pointer;
     padding: 1vw;
 
     .nav_item {
-      &.active {
+      a {
+        display: block;
+        font-size: 3vw;
+        text-decoration: none;
+        color: #000;
+      }
+
+      & a.active {
         font-weight: 600;
         border-bottom: 2px solid #22b8cf;
         color: #22b8cf;
